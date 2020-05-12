@@ -1,2 +1,29 @@
 @import "./reset.css";
 
+.site-title{
+    display: flex;
+    justify-content: center;
+}
+
+.search-container{
+    padding: 10px;
+}
+
+#search{
+    position: relative;
+    left: 30px;
+}
+
+#news-articles{
+    display: flex;
+    flex-flow: row wrap;
+    
+}
+#news-articles > li{
+        width: 24%;
+        padding: 0 1% 50px 0;
+}
+
+.article-img{
+    max-width: 80%;
+}
