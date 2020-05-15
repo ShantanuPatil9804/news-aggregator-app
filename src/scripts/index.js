@@ -1,9 +1,62 @@
-// let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=50b3997fdf7b4f9f86181f627b993f9d";
-// let req = new Request(url);
-// fetch(url).then(function(response) {
-//     console.log(response.json());
-// })
-// console.log("this is javascript");
+let apli = document.getElementById('news-articles');
+
+let js2html = function(gd){
+  let showhtml = '';
+  if(gd.length == 0){
+    let erme = `<span class="not-found">No article was found based on the search.
+                      </span>`;
+    return erme;
+  }
+  let inc;
+  for(inc = 0; inc < gd.length && inc < 20; inc++){
+    let liel = `<li class="article" onclick="redi()[${inc}]">
+                <img src="${gd[inc]["urlToImage"]}" class="article-img"/>
+                <h2 class="article-title">${gd[inc]["title"]}</h2><br/>
+                <p class="article-description">${gd[inc]["description"]}</p><br/>
+                <span class="article-author">${gd[inc]["author"]}</span>
+              </li>`
+    showhtml = showhtml + liel; 
+  }
+  return showhtml;
+}
+
+let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=50b3997fdf7b4f9f86181f627b993f9d";
+let req = new Request(url);
+let apiCall = function(curl){
+  let arob = fetch(curl);
+  arob.then(function(response) {
+      response.json().then(function (valdisp){
+        if(valdisp.articles){
+        apli.innerHTML = js2html(valdisp.articles);
+        }
+      })
+      .catch(function(rong){
+        console.log(rong);
+      })
+  }).catch(function(rng){
+    console.log(rng);
+  })
+}
+
+apiCall(url);
+
+let sq= () => {
+  let surl = document.getElementById('search').value;
+  let qurl = url + `&q=${surl}`;
+  apiCall(qurl);
+}
+
+let ct = function(){
+  let curthm = document.getElementById('theme');
+  if(curthm.value == "Go dark"){
+    document.body.style.backgroundColor = 'black';
+    curthm.value = "Let there be light";
+  }else if(curthm.value == "Let there be light"){
+    document.body.style.backgroundColor = 'white';
+    curthm.value = "Go dark";
+  }
+}
+
 
 // let serQu = document.getElementById('search');
 // console.log('var created');
@@ -13,30 +66,9 @@
 //     console.log('got value');
 // }
 // console.log('outside function');
-
 // serQu.addEventListener('keydown',quChk());
-
 // author
 // title
 // description
 // url
 // urlToImage
-let apli = document.getElementById('search')
-
-let htpr = () => {
-    let liel = (<li>
-    <img src="tempimg.png" class="article-img">
-    <h2 class="article-title">this is a header</h2>
-    <p class="article-description">this a description</p>
-    <span class="article-author">by author</span>
-    <a class="article-link" href="#">veiw news</a>
-  </li>)
-}
-
-
-apli.appendChild(liel);
-
-
-{/* for(let i = 0; i < 8; i++){
-    apli.appendChild();
-} */}

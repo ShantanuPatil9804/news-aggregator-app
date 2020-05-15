@@ -10,11 +10,15 @@
   <h1 class="site-title">News Aggregator</h1>
   
   <div class="search-container">
-    <input type="text" name="search" id="search" placeholder="Type and press enter to search..." />
+    <input type="text" name="search" id="search" placeholder="Type and press enter to search..." onkeyup="sq()"/>
   </div>
+  <hr/>
+  <span class="theme">
+    <input type="button" id="theme" value="Go dark" onclick="ct()"/>
+  </span>
 
   <ul id="news-articles">
-    <!-- <li>
+    <!-- <li class="article">
       <img src="tempimg.png" class="article-img">
       <h2 class="article-title">this is a header</h2>
       <p class="article-description">this a description</p>
@@ -22,6 +26,6 @@
       <a class="article-link" href="#">veiw news</a>
     </li> -->
   </ul>
+  <script type="text/javascript" src="scripts/index.js"></script>
 </body>
-<script type="text/javascript" src="scripts/index.js"></script>
 </html>
