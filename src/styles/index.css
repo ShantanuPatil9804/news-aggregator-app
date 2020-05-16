@@ -5,17 +5,14 @@ body{
 
 .site-title{
     font-size: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 #theme{
     width: 130px;
     padding: 2px;
     margin: 5px;
-}
-
-.site-title{
-    display: flex;
-    justify-content: center;
 }
 
 .search-container{
@@ -42,7 +39,15 @@ body{
 .article-img{
     max-width: 90%;
 }
-
+.article-title{
+    font-size: inherit;
+}
+.article-description{
+    color: inherit;
+}
+.article-author{
+    float: right;
+}
 .article-link{
     text-decoration: none;
     color: inherit;
