@@ -24,6 +24,7 @@ body{
 
 #search{
     width: 90%;
+    background-color: inherit;
 }
 
 #news-articles{
