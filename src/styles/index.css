@@ -1,6 +1,5 @@
 @import "./reset.css";
 body{
-    color: #555;
     padding: 0 30px;
 }
 
@@ -11,9 +10,7 @@ body{
 #theme{
     width: 130px;
     padding: 2px;
-    margin: 10px;
-    position: relative;
-    left: 30px;
+    margin: 5px;
 }
 
 .site-title{
@@ -22,14 +19,14 @@ body{
 }
 
 .search-container{
-    padding: 10px;
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #search{
-    width: 100%;
+    width: 90%;
 }
 
 #news-articles{
@@ -38,10 +35,19 @@ body{
     justify-content: space-evenly;
 }
 .article{
-        width: 23%;
-        padding: 0 1% 70px 1%;
+        width: 18%;
+        padding: 0 1% 50px 1%;
 }
 
 .article-img{
     max-width: 90%;
+}
+
+.article-link{
+    text-decoration: none;
+    color: inherit;
+}
+
+.article:hover{
+    transform: scale(1.1, 1.1);
 }

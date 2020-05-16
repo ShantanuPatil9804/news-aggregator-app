@@ -9,11 +9,13 @@ let js2html = function(gd){
   }
   let inc;
   for(inc = 0; inc < gd.length && inc < 20; inc++){
-    let liel = `<li class="article" onclick="redi()[${inc}]">
+    let liel = `<li class="article">
+                <a href="${gd[inc]["url"]}" class="article-link">
                 <img src="${gd[inc]["urlToImage"]}" class="article-img"/>
                 <h2 class="article-title">${gd[inc]["title"]}</h2><br/>
                 <p class="article-description">${gd[inc]["description"]}</p><br/>
-                <span class="article-author">${gd[inc]["author"]}</span>
+                <span class="article-author">-${gd[inc]["author"]}</span>
+                </a>
               </li>`
     showhtml = showhtml + liel; 
   }
@@ -50,9 +52,11 @@ let ct = function(){
   let curthm = document.getElementById('theme');
   if(curthm.value == "Go dark"){
     document.body.style.backgroundColor = 'black';
+    document.body.style.color = '#999';
     curthm.value = "Let there be light";
   }else if(curthm.value == "Let there be light"){
     document.body.style.backgroundColor = 'white';
+    document.body.style.color = 'black';
     curthm.value = "Go dark";
   }
 }
