@@ -35,6 +35,7 @@ body{
 .article{
         width: 18%;
         padding: 0 1% 50px 1%;
+        list-style: none;
 }
 
 .article-img{

@@ -60,17 +60,6 @@ let ct = function(){
     curthm.value = "Go dark";
   }
 }
-
-
-// let serQu = document.getElementById('search');
-// console.log('var created');
-// let quChk = () =>{
-//      console.log('in function');
-//     console.log(serQu.value);
-//     console.log('got value');
-// }
-// console.log('outside function');
-// serQu.addEventListener('keydown',quChk());
 // author
 // title
 // description
