@@ -37,6 +37,9 @@ body{
         padding: 0 1% 50px 1%;
         list-style: none;
 }
+.not-found{
+    color: inherit;
+}
 
 .article-img{
     max-width: 90%;
