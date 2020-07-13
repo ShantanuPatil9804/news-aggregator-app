@@ -2,7 +2,7 @@ let apli = document.getElementById('news-articles');
 
 let js2html = function(gd){
   let showhtml = '';
-  if(gd.length == 0){
+  if(gd.length === 0){
     let erme = `<span class="not-found">No article was found based on the search.
                       </span>`;
     return erme;
@@ -24,7 +24,8 @@ let js2html = function(gd){
 
 let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=50b3997fdf7b4f9f86181f627b993f9d";
 let req = new Request(url);
-let apiCall = function(curl){
+
+async function apiCall (curl){
   let arob = fetch(curl);
   arob.then(function(response) {
       response.json().then(function (valdisp){
@@ -50,16 +51,28 @@ let sq= () => {
 
 let ct = function(){
   let curthm = document.getElementById('theme');
-  if(curthm.value == "Go dark"){
+  if(curthm.value === "Go dark"){
     document.body.style.backgroundColor = 'black';
     document.body.style.color = '#999';
     curthm.value = "Let there be light";
-  }else if(curthm.value == "Let there be light"){
+  }else if(curthm.value === "Let there be light"){
     document.body.style.backgroundColor = 'white';
     document.body.style.color = 'black';
     curthm.value = "Go dark";
   }
 }
+
+let liststyle = document.getElementsByClassName('article');
+
+if (window.innerHeight > window.innerWidth) {
+    portrait = true;
+    liststyle.innerWidth = '48%' ;
+} else {
+    portrait = false;
+    liststyle.innerWidth = '23%';
+}
+
+
 // author
 // title
 // description
